@@ -1,4 +1,4 @@
 storeFile=signing-key.jks
-storePassword=
+storePassword=qwerty
 keyAlias=key0
-keyPassword=
+keyPassword=qwerty
