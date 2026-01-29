@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:clipToPadding="false">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back"
+                app:tint="@color/text_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textSize="28sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="16dp"/>
+        </LinearLayout>
+        
+        <!-- Pro Plan Status Card (New) -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.AndroidIPCamera.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:strokeColor="@color/pro_gold"
+            app:strokeWidth="1dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_star"
+                        app:tint="@color/pro_gold"/>
+                        
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Aircam Pro"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginStart="12dp"/>
+                        
+                    <TextView
+                        android:id="@+id/planStatusBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FREE"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_secondary"
+                        android:background="@drawable/badge_background"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"/>
+                </LinearLayout>
+                
+                <TextView
+                    android:id="@+id/planDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Unlock 4K streaming, Photo Capture, and more."
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="8dp"
+                    android:textSize="14sp"/>
+                    
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/manageSubscriptionButton"
+                    style="@style/Widget.AndroidIPCamera.Button.Pro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upgrade to Pro"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        
+        <!-- General Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Camera"
+            style="@style/TextAppearance.AndroidIPCamera.SettingsSection"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+            
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.AndroidIPCamera.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <!-- Resolution -->
+                <LinearLayout
+                    android:id="@+id/resolutionOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Resolution"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                    <TextView
+                        android:id="@+id/resolutionSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select camera resolution"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+                
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/glass_border" android:layout_marginStart="16dp"/>
+
+                <!-- Framerate (New) -->
+                <LinearLayout
+                    android:id="@+id/fpsOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Framerate"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                    <TextView
+                        android:id="@+id/fpsSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 FPS"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/glass_border" android:layout_marginStart="16dp"/>
+                
+                <!-- Zoom -->
+                <LinearLayout
+                    android:id="@+id/zoomOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zoom"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                    <TextView
+                        android:id="@+id/zoomSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enabled"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+                
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/glass_border" android:layout_marginStart="16dp"/>
+                
+                <!-- Auto-start Server Toggle -->
+                <LinearLayout
+                    android:id="@+id/autoStartOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Auto-start Server"
+                            style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                        <TextView
+                            android:id="@+id/autoStartSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start server when app opens"
+                            style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                    
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/autoStartSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        
+        <!-- Security Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Security"
+            style="@style/TextAppearance.AndroidIPCamera.SettingsSection"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+            
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.AndroidIPCamera.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <!-- Public Access Toggle -->
+                <LinearLayout
+                    android:id="@+id/publicAccessOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Public Access"
+                            style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                        <TextView
+                            android:id="@+id/publicAccessSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Allow anyone on network to view"
+                            style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                    
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/publicAccessSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""/>
+                </LinearLayout>
+                
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/glass_border" android:layout_marginStart="16dp"/>
+                
+                <LinearLayout
+                    android:id="@+id/usernameOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                    <TextView
+                        android:id="@+id/usernameSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="admin"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+                
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/glass_border" android:layout_marginStart="16dp"/>
+                
+                <LinearLayout
+                     android:id="@+id/passwordOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                    <TextView
+                        android:id="@+id/passwordSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="••••••••"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/glass_border" android:layout_marginStart="16dp"/>
+
+                <LinearLayout
+                     android:id="@+id/portOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Port"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                    <TextView
+                        android:id="@+id/portSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4444"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>               
+                
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+         <!-- Advanced Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Advanced"
+            style="@style/TextAppearance.AndroidIPCamera.SettingsSection"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"/>
+            
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.AndroidIPCamera.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <LinearLayout
+                    android:id="@+id/certificateOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HTTPS Certificate"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsTitle"/>
+                    <TextView
+                         android:id="@+id/certificateSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Default (Auto-generated)"
+                        style="@style/TextAppearance.AndroidIPCamera.SettingsSummary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- About Section -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.AndroidIPCamera.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aircam"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Made with ❤️ by Sami"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="8dp"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="v1.0.0"
+                    android:textColor="@color/text_hint"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"/>
+                
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

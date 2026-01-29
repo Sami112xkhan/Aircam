@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <!-- Camera Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Top Gradient Overlay (Subtler) -->
+    <View
+        android:id="@+id/topGradient"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/gradient_top_overlay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Top Status Bar Area -->
+    <LinearLayout
+        android:id="@+id/topInfoBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <!-- Live Status Indicator -->
+        <View
+            android:id="@+id/statusIndicator"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/status_indicator_active" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Ready"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"/>
+            
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+            
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/getProButton"
+            style="@style/Widget.AndroidIPCamera.Button.Pro"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="PRO"
+            android:textSize="12sp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            app:icon="@drawable/ic_star"
+            app:iconSize="12dp"
+            app:iconTint="@color/background_dark"
+            app:cornerRadius="18dp" />
+    </LinearLayout>
+
+    <!-- Bottom Control Panel Gradient -->
+    <View
+        android:id="@+id/bottomGradient"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/gradient_bottom_overlay"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Bottom Controls Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomControlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- IP Address Display (Glass Card) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ipAddressCard"
+            style="@style/Widget.AndroidIPCamera.Card.Glass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="28dp"
+            app:layout_constraintBottom_toTopOf="@id/controlsRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingBottom="8dp"> <!-- Extra padding for visual balance -->
+                
+                <TextView
+                    android:id="@+id/ipAddressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="24dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="12dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    app:drawableStartCompat="@drawable/ic_visibility" 
+                    app:drawableTint="@color/primary"
+                    android:drawablePadding="12dp"/>
+                    
+                <!-- Server Control Buttons -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:paddingBottom="16dp">
+                    
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/startServerButton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Start"
+                        android:textSize="14sp"
+                        app:icon="@drawable/ic_play"
+                        app:iconSize="18dp"
+                        app:cornerRadius="24dp"
+                        android:layout_marginEnd="12dp"
+                        android:backgroundTint="@color/success"
+                        android:textColor="#FFFFFF" />
+                        
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/stopServerButton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:text="Stop"
+                        android:textSize="14sp"
+                        app:icon="@drawable/ic_stop"
+                        app:iconSize="18dp"
+                        app:cornerRadius="24dp"
+                        android:enabled="false"
+                        android:backgroundTint="@color/error_red"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Control Buttons Row -->
+        <LinearLayout
+            android:id="@+id/controlsRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Settings FAB -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/settingsButton"
+                style="@style/Widget.AndroidIPCamera.FAB.Control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:contentDescription="Settings"
+                app:tint="@color/on_secondary_container"
+                app:backgroundTint="@color/secondary_container" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="48dp"
+                android:layout_height="0dp" />
+
+            <!-- Switch Camera FAB (Large) -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/switchCameraButton"
+                style="@style/Widget.AndroidIPCamera.FAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabCustomSize="80dp"
+                android:src="@drawable/ic_camera_switch"
+                android:contentDescription="Switch Camera"
+                app:tint="@color/on_primary_container"
+                app:backgroundTint="@color/primary_container"
+                app:maxImageSize="36dp"/>
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="48dp"
+                android:layout_height="0dp" />
+
+            <!-- Privacy/Hide FAB -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/hidePreviewButton"
+                style="@style/Widget.AndroidIPCamera.FAB.Control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_visibility"
+                android:contentDescription="Privacy Mode"
+                app:tint="@color/on_secondary_container"
+                app:backgroundTint="@color/secondary_container" />
+
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/developerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Made by Sami"
+            android:textColor="@color/text_hint"
+            android:textSize="10sp"
+            android:alpha="0.5"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/controlsRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Screen Flash Overlay -->
+    <FrameLayout
+        android:id="@+id/flashOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="gone"
+        android:elevation="100dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

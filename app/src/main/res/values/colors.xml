@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- M3 Expressive Palette -->
+    <!-- Primary - Lavender/Purple -->
+    <color name="primary">#D0BCFF</color>
+    <color name="primary_variant">#4F378B</color>
+    <color name="on_primary">#381E72</color>
+    <color name="primary_container">#4F378B</color>
+    <color name="on_primary_container">#EADDFF</color>
+
+    <!-- Secondary - Teal/Pastel -->
+    <color name="secondary">#CCC2DC</color>
+    <color name="secondary_variant">#4A4458</color>
+    <color name="on_secondary">#332D41</color>
+    <color name="secondary_container">#4A4458</color>
+    <color name="on_secondary_container">#E8DEF8</color>
+
+    <!-- Background Colors - Deep Surface -->
+    <color name="background_dark">#141218</color>
+    <color name="background_surface">#1D1B20</color>
+    <color name="background_card">#2B2930</color>
+    
+    <!-- Glass Effect Colors -->
+    <color name="glass_background">#E61E1E30</color> <!-- High opacity for readability -->
+    <color name="glass_border">#33FFFFFF</color>
+    
+    <!-- Text Colors - High Contrast -->
+    <color name="text_primary">#FFFFFF</color> <!-- Pure White -->
+    <color name="text_secondary">#D1D5DB</color> <!-- Light Gray, high readability -->
+    <color name="text_hint">#9CA3AF</color>
+    
+    <!-- Pro/Premium Colors -->
+    <color name="pro_gold">#F59E0B</color>
+    <color name="pro_gradient_start">#F59E0B</color>
+    <color name="pro_gradient_end">#D97706</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#10B981</color>
+    <color name="error">#EF4444</color>
+    <color name="warning">#F59E0B</color>
+    
+    <!-- Ripple/Overlay -->
+    <color name="overlay_light">#1AFFFFFF</color>
+    
+    <!-- Dynamic Helper Colors -->
+    <color name="error_red">#EF4444</color>
+    <color name="accent_primary">#6D28D9</color>
+</resources>

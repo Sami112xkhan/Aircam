@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Application Theme -->
+    <style name="Theme.AndroidIPCamera" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container</item>
+        
+        <!-- Background & Surface -->
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/background_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/background_dark</item>
+        
+        <!-- Window Transitions -->
+        <item name="android:windowAnimationStyle">@style/Theme.AndroidIPCamera.WindowAnimation</item>
+    </style>
+    
+    <!-- Window Animations -->
+    <style name="Theme.AndroidIPCamera.WindowAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+    
+    <!-- Settings Screen Theme -->
+    <style name="Theme.AndroidIPCamera.Settings" parent="Theme.AndroidIPCamera">
+       <!-- No Reference to preferenceTheme needed as we are using custom layout -->
+    </style>
+    
+    <!-- Modern Button Style (M3) -->
+    <style name="Widget.AndroidIPCamera.Button" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    
+    <!-- Pro Button Style -->
+    <style name="Widget.AndroidIPCamera.Button.Pro" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/background_dark</item>
+        <item name="backgroundTint">@color/pro_gold</item>
+        <item name="cornerRadius">32dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="elevation">4dp</item>
+    </style>
+    
+    <!-- Modern Card Style (M3) -->
+    <style name="Widget.AndroidIPCamera.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/background_card</item>
+        <item name="cardCornerRadius">28dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+    
+    <!-- Glass Card Style (Transparent) -->
+    <style name="Widget.AndroidIPCamera.Card.Glass" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">#501D1B20</item> <!-- Translucent Dark -->
+        <item name="cardCornerRadius">28dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/glass_border</item>
+        <item name="strokeWidth">0.5dp</item>
+    </style>
+    
+    <!-- Floating Action Button Style (M3) -->
+    <style name="Widget.AndroidIPCamera.FAB" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/primary_container</item>
+        <item name="tint">@color/on_primary_container</item>
+        <item name="elevation">4dp</item>
+    </style>
+    
+    <!-- Control Bar FAB Style -->
+     <style name="Widget.AndroidIPCamera.FAB.Control" parent="Widget.AndroidIPCamera.FAB">
+        <item name="backgroundTint">@color/background_surface</item>
+        <item name="fabSize">normal</item>
+    </style>
+    
+    <!-- Base text appearance to satisfy hierarchy if needed -->
+    <style name="TextAppearance.AndroidIPCamera" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Settings Section Title -->
+    <style name="TextAppearance.AndroidIPCamera.SettingsSection" parent="TextAppearance.AndroidIPCamera">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/secondary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    
+     <!-- Settings Item Title -->
+    <style name="TextAppearance.AndroidIPCamera.SettingsTitle" parent="TextAppearance.AndroidIPCamera">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    
+     <!-- Settings Item Summary -->
+    <style name="TextAppearance.AndroidIPCamera.SettingsSummary" parent="TextAppearance.AndroidIPCamera">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>
