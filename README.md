@@ -1,7 +1,7 @@
 # Aircam 🎥
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com/)
 [![Kotlin](https://img.shields.io/badge/Language-Kotlin-blue.svg)](https://kotlinlang.org/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
 [![Sponsor](https://img.shields.io/badge/Sponsor-Buy%20Me%20A%20Coffee-orange.svg)](https://buymeacoffee.com/samiullahkhan)
 
 Aircam is a high-performance, premium Android IP Camera application designed with a modern **Material 3 Glassmorphism UI**. It transforms your Android device into a professional-grade streaming camera with advanced controls, smooth lens transitions, and a beautiful web-based dashboard.
@@ -72,6 +72,6 @@ If you find Aircam useful and would like to support its development, you can buy
 ---
 
 ## 📜 License
-This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
+This project is licensed under a **Proprietary Commercial License**. All rights are reserved by Digitally Refined (Sami Khan). Unauthorized copying, modification, or distribution is strictly prohibited. For commercial use or redistribution, a licensing fee is required.
 
 Developed with ❤️ by **Digitally Refined** (Sami Khan).
